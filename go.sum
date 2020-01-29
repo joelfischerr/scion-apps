@@ -79,6 +79,8 @@ github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0
 github.com/kylelemons/godebug v1.1.0/go.mod h1:9/0rRGxNHcop5bhtWyNeEfOS8JIWk580+fNqagV/RAw=
 github.com/lucas-clemente/quic-go v0.7.1-0.20190212114006-fd7246d7ed6e h1:Y07tY5Q2/7WwkwZHxYlQC4mQeD1kM6BQLk/6S64KHY4=
 github.com/lucas-clemente/quic-go v0.7.1-0.20190212114006-fd7246d7ed6e/go.mod h1:wuD+2XqEx8G9jtwx5ou2BEYBsE+whgQmlj0Vz/77PrY=
+github.com/lukedirtwalker/scion v0.0.0-20200129151905-ed26f569a701 h1:JplDe9fHMRF/saZbS/jEKUB7JKGPJ+2JHgNjy00n/eg=
+github.com/lukedirtwalker/scion v0.0.0-20200129151905-ed26f569a701/go.mod h1:yayLUQzSt/Lwg+3dA2terZ3tEgXI9r7CX8MKrX5CIdI=
 github.com/marten-seemann/qtls v0.0.0-20190207043627-591c71538704 h1:7Fx1paF8onfPhcIMlwgznBklz62TrCZjOjoBbUod/3Y=
 github.com/marten-seemann/qtls v0.0.0-20190207043627-591c71538704/go.mod h1:DWDPNN1eWKaT5wsnMz2LR336Zh9hlw/YSRXxqEukrT8=
 github.com/mattn/go-colorable v0.1.4 h1:snbPLB8fVfU9iwbbo30TPtbLRzwWu6aJS6Xh4eaaviA=
@@ -131,8 +133,6 @@ github.com/prometheus/procfs v0.0.0-20181005140218-185b4288413d/go.mod h1:c3At6R
 github.com/prometheus/procfs v0.0.2/go.mod h1:TjEm7ze935MbeOT/UhFTIMYKhuLP4wbCsTZCD3I8kEA=
 github.com/prometheus/procfs v0.0.3 h1:CTwfnzjQ+8dS6MhHHu4YswVAD99sL2wjPqP+VkURmKE=
 github.com/prometheus/procfs v0.0.3/go.mod h1:4A/X28fw3Fc593LaREMrKMqOKvUAntwMDaekg4FpcdQ=
-github.com/scionproto/scion v0.4.1-0.20200123134115-0f042cb3a47e h1:QPlSqCMyGvJo+q9L7c/3s4CBGLbR/jBS4tFOAtlTFzA=
-github.com/scionproto/scion v0.4.1-0.20200123134115-0f042cb3a47e/go.mod h1:yayLUQzSt/Lwg+3dA2terZ3tEgXI9r7CX8MKrX5CIdI=
 github.com/sergi/go-diff v1.0.1-0.20180205163309-da645544ed44/go.mod h1:0CfEIISq7TuYL3j771MWULgwwjU+GofnZX9QAmXWZgo=
 github.com/sirupsen/logrus v1.2.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d h1:zE9ykElWQ6/NYmHa3jpm/yHnI4xSofP+UP6SpjHcSeM=
