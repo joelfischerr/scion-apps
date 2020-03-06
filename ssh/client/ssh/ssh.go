@@ -1,3 +1,17 @@
+// Copyright 2020 ETH Zurich
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 package ssh
 
 import (
@@ -19,6 +33,7 @@ import (
 	"github.com/netsec-ethz/scion-apps/ssh/client/clientconfig"
 	"github.com/netsec-ethz/scion-apps/ssh/client/ssh/knownhosts"
 	"github.com/netsec-ethz/scion-apps/ssh/quicconn"
+	"github.com/netsec-ethz/scion-apps/ssh/scionutils"
 	"github.com/netsec-ethz/scion-apps/ssh/sssh"
 	"github.com/netsec-ethz/scion-apps/ssh/utils"
 )
@@ -38,14 +53,17 @@ type Client struct {
 
 	client  *ssh.Client
 	session *ssh.Session
+	appConf *scionutils.PathAppConf
 }
 
 // Create creates a new unconnected Client.
-func Create(username string, config *clientconfig.ClientConfig, passAuthHandler AuthenticationHandler, verifyNewKeyHandler VerifyHostKeyHandler) (*Client, error) {
+func Create(username string, config *clientconfig.ClientConfig, passAuthHandler AuthenticationHandler,
+	verifyNewKeyHandler VerifyHostKeyHandler, appConf *scionutils.PathAppConf) (*Client, error) {
 	client := &Client{
 		config: &ssh.ClientConfig{
 			User: username,
 		},
+		appConf: appConf,
 	}
 
 	var authMethods []ssh.AuthMethod
@@ -99,7 +117,7 @@ func Create(username string, config *clientconfig.ClientConfig, passAuthHandler 
 
 // Connect connects the Client to the given address.
 func (client *Client) Connect(addr string) error {
-	goClient, err := sssh.DialSCION(addr, client.config)
+	goClient, err := sssh.DialSCIONWithConf(addr, client.config, client.appConf)
 	if err != nil {
 		return err
 	}
