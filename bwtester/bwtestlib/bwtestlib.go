@@ -30,8 +30,8 @@ import (
 )
 
 const (
-	// Maximum duration of a bandwidth test
-	MaxDuration time.Duration = time.Second * 10
+	// Maximum duration of a bandwidth test is one hour
+	MaxDuration time.Duration = time.Second * 3600
 	// Maximum amount of time to wait for straggler packets
 	StragglerWaitPeriod time.Duration = time.Second
 	// Allow sending beyond the finish time by this amount
