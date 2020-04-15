@@ -33,7 +33,8 @@ const (
 	// Maximum duration of a bandwidth test is one hour
 	MaxDuration time.Duration = time.Second * 3600
 	// Maximum amount of time to wait for straggler packets
-	StragglerWaitPeriod time.Duration = time.Second
+	// StragglerWaitPeriod time.Duration = time.Second
+	StragglerWaitPeriod time.Duration = time.Millisecond * 10
 	// Allow sending beyond the finish time by this amount
 	GracePeriodSend time.Duration = time.Millisecond * 10
 	// Min packet size is 4 bytes, so that 32-bit integer fits in
@@ -44,7 +45,7 @@ const (
 	// Make sure the port number is a port the server application can connect to
 	MinPort uint16 = 1024
 
-	MaxTries int64         = 5 // Number of times to try to reach server
+	MaxTries int64         = 20 // Number of times to try to reach server
 	Timeout  time.Duration = time.Millisecond * 500
 	MaxRTT   time.Duration = time.Millisecond * 1000
 )
