@@ -229,6 +229,8 @@ func pipeConn(conn io.ReadWriteCloser) {
 		_, err := io.Copy(conn, reader)
 		log.Debug("Done copying from (std/process) input", "conn", conn, "error", err)
 		pipesWait.Done()
+		// Ext as soon as we are done copying. This is needed for the demo to work.
+		os.Exit(0)
 	}()
 	_, err := io.Copy(writer, conn)
 	log.Debug("Done copying to (std/process) output", "conn", conn, "error", err)
